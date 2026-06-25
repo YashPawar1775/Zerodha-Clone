@@ -1,0 +1,55 @@
+.sell-container {
+  --radius: 4px;
+  width: 40%;
+  height: 63%;
+  background: rgb(245, 245, 245);
+  position: absolute;
+  bottom: 0;
+  left: 35%;
+  z-index: 100;
+  border-radius: var(--radius);
+  border: 1px solid rgb(238, 238, 238);
+}
+
+.sell-container .regular-order {
+  padding: 16px 26px;
+  background-color: #fff;
+  padding-bottom: 30px;
+}
+
+.sell-container .inputs {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.sell-container fieldset {
+  max-width: 120px;
+  border: 0.7px solid #ddd;
+  margin-right: 8px;
+}
+
+.sell-container legend {
+  font-size: 0.8rem;
+  margin-left: 10px;
+}
+
+.sell-container input {
+  border: none;
+  min-height: 35px;
+  padding: 0 12px;
+  font-size: 1rem;
+}
+
+.sell-container input:focus {
+  outline: none;
+}
+
+.btn-red {
+  background: #ff5722;
+  color: white;
+}
+
+.btn-red:hover {
+  background: #ff784e;
+}
