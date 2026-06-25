@@ -8,6 +8,13 @@ const Menu = () => {
     const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
 
     useEffect(() => {
+        // axios.get("http://localhost:8080/profile",{withCredentials: true})
+        //     .then((res) => {
+        //         setUser(res.data);
+        //     })
+        //     .catch((err) => {
+        //         console.log(err);
+        //     });
         axios.get("https://zerodha-clone-backend-tawny.vercel.app/profile",{withCredentials: true})
             .then((res) => {
                 setUser(res.data);
@@ -27,6 +34,11 @@ const Menu = () => {
 
     const handleLogout = async () => {
         try {
+            // await axios.post("http://localhost:8080/logout",{},{
+            //         withCredentials: true
+            //     }
+            // );
+            // window.location.href = "http://localhost:3000";
             await axios.post("https://zerodha-clone-backend-tawny.vercel.app/logout",{},{
                     withCredentials: true
                 }

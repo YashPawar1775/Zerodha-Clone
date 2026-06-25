@@ -13,6 +13,15 @@ function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        // try {
+        //     await axios.post("http://localhost:8080/login",formData,{
+        //             withCredentials: true
+        //         }
+        //     );
+        //     window.location.href="http://localhost:3001";
+        // } catch (err) {
+        //     alert(err.response?.data?.message ||"Login Failed");
+        // }
         try {
             await axios.post("https://zerodha-clone-backend-tawny.vercel.app/login",formData,{
                     withCredentials: true

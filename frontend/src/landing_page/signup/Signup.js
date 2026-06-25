@@ -14,6 +14,15 @@ function SignUp() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        // try {
+        //     await axios.post("http://localhost:8080/signup",formData,{
+        //             withCredentials: true
+        //         }
+        //     );
+        //     window.location.href = "http://localhost:3001";
+        // } catch (err) {
+        //     alert(err.response?.data?.message ||"Signup Failed");
+        // }
         try {
             await axios.post("https://zerodha-clone-backend-tawny.vercel.app/signup",formData,{
                     withCredentials: true
