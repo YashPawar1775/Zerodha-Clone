@@ -222,4 +222,3 @@ mongoose.connect(uri)
   .catch(err => {
       console.error("MongoDB connection error:", err);
   });
-  console.log(uri);
