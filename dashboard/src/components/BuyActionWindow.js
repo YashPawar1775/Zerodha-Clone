@@ -14,7 +14,7 @@ const BuyActionWindow = ({ uid }) => {
   const generalContext = useContext(GeneralContext);
 
   const handleBuyClick = () => {
-    axios.post("http://localhost:8080/newOrder", {
+    axios.post("https://zerodha-clone-backend-tawny.vercel.app/newOrder", {
       name: uid,
       qty: stockQuantity,
       price: stockPrice,

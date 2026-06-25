@@ -6,7 +6,7 @@ const Orders = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/allOrders")
+      .get("https://zerodha-clone-backend-tawny.vercel.app/allOrders")
       .then((res) => {
         setOrders(res.data);
       });

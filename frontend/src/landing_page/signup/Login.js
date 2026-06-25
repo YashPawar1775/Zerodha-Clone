@@ -14,7 +14,7 @@ function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:8080/login",formData,{
+            await axios.post("https://zerodha-clone-backend-tawny.vercel.app/login",formData,{
                     withCredentials: true
                 }
             );

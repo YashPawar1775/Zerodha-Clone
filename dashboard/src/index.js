@@ -6,7 +6,7 @@ import axios from "axios";
 import "./index.css";
 import Home from "./components/Home";
 
-axios.get("http://localhost:8080/profile", {withCredentials: true,})
+axios.get("https://zerodha-clone-backend-tawny.vercel.app/profile", {withCredentials: true,})
   .then(() => {
     const root = ReactDOM.createRoot(
       document.getElementById("root")

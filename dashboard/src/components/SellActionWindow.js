@@ -13,7 +13,7 @@ const SellActionWindow = ({ uid }) => {
   const generalContext = useContext(GeneralContext);
 
   const handleSellClick = async () => {
-    await axios.post("http://localhost:8080/newOrder", {
+    await axios.post("https://zerodha-clone-backend-tawny.vercel.app/newOrder", {
       name: uid,
       qty: stockQuantity,
       price: stockPrice,
