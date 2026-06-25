@@ -211,8 +211,15 @@ app.get("/profile", auth, async (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`App started at ${PORT}`);
-    mongoose.connect(uri);
-    console.log("DB Connected Successfully");
-});
+mongoose.connect(uri)
+  .then(() => {
+      console.log("MongoDB Connected");
+
+      app.listen(PORT, () => {
+          console.log(`Server running on ${PORT}`);
+      });
+  })
+  .catch(err => {
+      console.error("MongoDB connection error:", err);
+  });
+  console.log(uri);
