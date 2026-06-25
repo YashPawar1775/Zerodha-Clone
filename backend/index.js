@@ -24,9 +24,8 @@ app.use(cors({
     origin: [
         // "http://localhost:3000",
         // "http://localhost:3001"
-        "https://zerodha-clone-frontend-flax.vercel.app/",
-        "https://zerodha-clone-dashboard-gray.vercel.app/",
-        "https://zerodha-clone-backend-tawny.vercel.app/"
+        "https://zerodha-clone-frontend-flax.vercel.app",
+        "https://zerodha-clone-dashboard-gray.vercel.app",
     ],
     credentials: true
 }));
@@ -120,8 +119,8 @@ app.post("/signup", async (req, res) => {
         );
         res.cookie("token", token, {
             httpOnly: true,
-            secure: false,
-            sameSite: "lax",
+            secure: true,
+            sameSite: "none",
             maxAge: 24 * 60 * 60 * 1000
         });
         res.status(201).json({
@@ -169,8 +168,8 @@ app.post("/login", async (req, res) => {
         );
         res.cookie("token", token, {
             httpOnly: true,
-            secure: false,
-            sameSite: "lax",
+            secure: true,
+            sameSite: "none",
             maxAge: 24 * 60 * 60 * 1000
         });
         res.status(200).json({
