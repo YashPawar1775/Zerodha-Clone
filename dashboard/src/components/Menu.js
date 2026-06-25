@@ -15,13 +15,6 @@ const Menu = () => {
             .catch((err) => {
                 console.log(err);
             });
-        // axios.get("http://localhost:8080/profile",{withCredentials: true})
-        //     .then((res) => {
-        //         setUser(res.data);
-        //     })
-        //     .catch((err) => {
-        //         console.log(err);
-        //     });
     }, []);
 
     const handleMenuClick = (index) => {
@@ -39,11 +32,6 @@ const Menu = () => {
                 }
             );
             window.location.href = "https://zerodha-clone-frontend-flax.vercel.app/";
-            // await axios.post("http://localhost:8080/logout",{},{
-            //         withCredentials: true
-            //     }
-            // );
-            // window.location.href = "http://localhost:3000";
         } catch (err) {
             console.error(err);
         }
