@@ -6,6 +6,28 @@ import axios from "axios";
 import "./index.css";
 import Home from "./components/Home";
 
+// axios.get("http://localhost:8080/profile", {withCredentials: true,})
+//   .then(() => {
+//     const root = ReactDOM.createRoot(
+//       document.getElementById("root")
+//     );
+//     root.render(
+//       <React.StrictMode>
+//           <BrowserRouter>
+//               <Routes>
+//                   <Route
+//                       path="/*"
+//                       element={<Home />}
+//                   />
+//               </Routes>
+//           </BrowserRouter>
+//       </React.StrictMode>
+//     );
+//   })
+//   .catch(() => {
+//     window.location.href ="http://localhost:3000";
+// });
+
 axios.get("https://zerodha-clone-backend-tawny.vercel.app/profile", {withCredentials: true,})
   .then(() => {
     const root = ReactDOM.createRoot(
@@ -25,5 +47,5 @@ axios.get("https://zerodha-clone-backend-tawny.vercel.app/profile", {withCredent
     );
   })
   .catch(() => {
-    window.location.href ="http://localhost:3000";
+    window.location.href ="https://zerodha-clone-frontend-flax.vercel.app/";
 });

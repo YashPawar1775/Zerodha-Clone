@@ -5,11 +5,12 @@ const Orders = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://zerodha-clone-backend-tawny.vercel.app/allOrders")
-      .then((res) => {
-        setOrders(res.data);
-      });
+    // axios.get("http://localhost:8080/allOrders").then((res) => {
+    //   setOrders(res.data);
+    // });
+    axios .get("https://zerodha-clone-backend-tawny.vercel.app/allOrders").then((res) => {
+      setOrders(res.data);
+    });
   }, []);
 
   return (

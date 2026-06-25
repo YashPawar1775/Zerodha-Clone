@@ -15,6 +15,10 @@ function SignUp() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            // await axios.post("http://localhost:8080/signup",formData,{
+            //         withCredentials: true
+            //     }
+            // );
             await axios.post("https://zerodha-clone-backend-tawny.vercel.app/signup",formData,{
                     withCredentials: true
                 }
