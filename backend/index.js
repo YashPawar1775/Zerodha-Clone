@@ -20,15 +20,7 @@ const uri = process.env.MONGO_URL;
 
 const app = express();
 
-app.use(cors({
-    origin: [
-        // "http://localhost:3000",
-        // "http://localhost:3001"
-        "https://zerodha-clone-frontend-flax.vercel.app",
-        "https://zerodha-clone-dashboard-gray.vercel.app",
-    ],
-    credentials: true
-}));
+app.use(cors());
 app.use(bodyParser.json());
 app.use(cookieParser());
 
@@ -60,8 +52,8 @@ app.post("/newOrder", async (req, res) => {
     });
     if (req.body.mode === "BUY") {
         if (holding) {
-            const totalQty=holding.qty+Number(req.body.qty);
-            const avgPrice =(holding.qty*holding.avg+Number(req.body.qty)*Number(req.body.price)) / totalQty;
+            const totalQty = holding.qty + Number(req.body.qty);
+            const avgPrice = (holding.qty * holding.avg + Number(req.body.qty) * Number(req.body.price)) / totalQty;
             holding.qty = totalQty;
             holding.avg = avgPrice;
             await holding.save();
@@ -79,7 +71,7 @@ app.post("/newOrder", async (req, res) => {
     }
 
     if (req.body.mode === "SELL" && holding) {
-        holding.qty =holding.qty - Number(req.body.qty);
+        holding.qty = holding.qty - Number(req.body.qty);
         if (holding.qty <= 0) {
             await HoldingsModel.findByIdAndDelete(
                 holding._id
@@ -94,7 +86,7 @@ app.post("/newOrder", async (req, res) => {
 app.post("/signup", async (req, res) => {
     try {
         const { username, email, password } = req.body;
-        const existingUser =await UsersModel.findOne({ email });
+        const existingUser = await UsersModel.findOne({ email });
         if (existingUser) {
             return res.status(400).json({
                 message: "User already exists"
@@ -212,13 +204,13 @@ app.get("/profile", auth, async (req, res) => {
 });
 
 mongoose.connect(uri)
-  .then(() => {
-      console.log("MongoDB Connected");
+    .then(() => {
+        console.log("MongoDB Connected");
 
-      app.listen(PORT, () => {
-          console.log(`Server running on ${PORT}`);
-      });
-  })
-  .catch(err => {
-      console.error("MongoDB connection error:", err);
-  });
+        app.listen(PORT, () => {
+            console.log(`Server running on ${PORT}`);
+        });
+    })
+    .catch(err => {
+        console.error("MongoDB connection error:", err);
+    });
