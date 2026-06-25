@@ -23,7 +23,7 @@ const app = express();
 app.use(cors({
     origin: [
         "https://zerodha-clone-frontend-flax.vercel.app/",
-        "http://localhost:3001"
+        "https://zerodha-clone-dashboard-gray.vercel.app/"
     ],
     credentials: true
 }));

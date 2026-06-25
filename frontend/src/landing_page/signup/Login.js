@@ -18,7 +18,7 @@ function Login() {
                     withCredentials: true
                 }
             );
-            window.location.href="http://localhost:3001";
+            window.location.href="https://zerodha-clone-dashboard-gray.vercel.app/";
         } catch (err) {
             alert(err.response?.data?.message ||"Login Failed");
         }
